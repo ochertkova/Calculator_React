@@ -31,12 +31,12 @@ function App() {
 
   function resetInput(e) {
     e.preventDefault();
-    setResult((result) => result + Number(inputRef.current.value));
+    inputRef.current.value = 0;
   };
 
   function resetResult(e) {
     e.preventDefault();
-    setResult((result) => Number(0));
+    setResult((result) => 0);
   };
 
   return (
@@ -52,6 +52,7 @@ function App() {
           pattern="[0-9]"
           ref={inputRef}
           type="number"
+
           placeholder="Type a number"
         />
         <button onClick={plus}>add</button>
